@@ -18,9 +18,6 @@ export const env = cleanEnv(process.env, {
   MONGO_CONNECTION_URI: str({
     devDefault: testOnly('mongodb://localhost:27017/Go_Game_DB'),
   }),
-  REDIS_CONNECTION_URI: str({
-    devDefault: testOnly('redis://localhost:6379'),
-  }),
   //Password Hash
   SALT_ROUNDS: num({devDefault: 10}),
   //JWT
