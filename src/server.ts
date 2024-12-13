@@ -8,6 +8,7 @@ import errorHandler from '@/middleware/errorHandler.middleware';
 import rateLimiter from '@/middleware/rateLimiter.middleware';
 import requestLogger from '@/middleware/requestLogger.middleware';
 import {accountRouter} from './routers/account.router';
+import {todoRouter} from './routers/todo.router';
 
 const app: Express = express();
 
@@ -26,6 +27,7 @@ app.use(requestLogger());
 
 // Routes
 app.use('/api/account', accountRouter);
+app.use('/api/todo', todoRouter);
 
 // Swagger UI
 app.use(openAPIRouter);
