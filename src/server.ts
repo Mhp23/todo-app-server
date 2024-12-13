@@ -7,6 +7,7 @@ import {env} from '@/core/envConfig';
 import errorHandler from '@/middleware/errorHandler.middleware';
 import rateLimiter from '@/middleware/rateLimiter.middleware';
 import requestLogger from '@/middleware/requestLogger.middleware';
+import {accountRouter} from './routers/account.router';
 
 const app: Express = express();
 
@@ -24,6 +25,7 @@ app.use(rateLimiter);
 app.use(requestLogger());
 
 // Routes
+app.use('/api/account', accountRouter);
 
 // Swagger UI
 app.use(openAPIRouter);

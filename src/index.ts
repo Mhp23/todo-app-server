@@ -2,6 +2,7 @@ import {env} from '@/core/envConfig';
 import {app} from '@/server';
 import {logger} from '@/utils/logger';
 import connectToDB from './core/db';
+import {expiredTokensScheduler} from './core/scheduler';
 
 connectToDB().then(() => {
   const server = app.listen(env.PORT, () => {
@@ -19,6 +20,8 @@ connectToDB().then(() => {
 
     setTimeout(() => process.exit(1), 10000).unref();
   };
+
+  expiredTokensScheduler();
 
   process.on('SIGINT', onCloseSignal);
   process.on('SIGTERM', onCloseSignal);

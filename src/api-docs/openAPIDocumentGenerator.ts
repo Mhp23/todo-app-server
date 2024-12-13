@@ -2,9 +2,10 @@ import {
   OpenAPIRegistry,
   OpenApiGeneratorV3,
 } from '@asteasolutions/zod-to-openapi';
+import {accountRegistry} from './registries/account.registry';
 
 export function generateOpenAPIDocument() {
-  const registry = new OpenAPIRegistry([]);
+  const registry = new OpenAPIRegistry([accountRegistry]);
   const generator = new OpenApiGeneratorV3(registry.definitions);
 
   return generator.generateDocument({
