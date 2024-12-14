@@ -1,6 +1,7 @@
 import {AccountModel} from '@/models/account.model';
 import type {
   AccessableAccountType,
+  AccountSchemaType,
   AccountType,
   CredentialsType,
 } from '@/schemas/account.schema';
@@ -11,6 +12,10 @@ import {logger} from '@/utils/logger';
 import {StatusCodes} from 'http-status-codes';
 
 class AccountService {
+  private prepareAccountData(account: AccountSchemaType) {
+    const {password: _, refreshTokenExpiration: __, ...accountData} = account;
+    return accountData;
+  }
   async register({username, password}: CredentialsType) {
     try {
       const existingAccount = await AccountModel.findOne({username}).lean();
@@ -38,7 +43,7 @@ class AccountService {
       newAccount.refreshTokenExpiration = refreshTokenExpiration;
       await newAccount.save();
 
-      const {password: _, ...accountData} = newAccount.toObject();
+      const accountData = this.prepareAccountData(newAccount.toObject());
       return ResponseService.success<AccessableAccountType>(
         {
           ...accountData,
@@ -72,12 +77,7 @@ class AccountService {
       account.refreshTokenExpiration = refreshTokenExpiration;
       await account.save();
 
-      const {
-        password: _,
-        refreshTokenExpiration: __,
-        ...accountData
-      } = account.toObject();
-
+      const accountData = this.prepareAccountData(account.toObject());
       return ResponseService.success<AccessableAccountType>(
         {...accountData, accessToken},
         'Login successful.',
@@ -125,12 +125,7 @@ class AccountService {
       account.refreshTokenExpiration = refreshTokenExpiration;
       await account.save();
 
-      const {
-        password: _,
-        refreshTokenExpiration: __,
-        ...accountData
-      } = account.toObject();
-
+      const accountData = this.prepareAccountData(account.toObject());
       return ResponseService.success<AccessableAccountType>(
         {...accountData, accessToken, refreshToken: newRefreshToken},
         'Access token refreshed successfully.',
