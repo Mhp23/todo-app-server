@@ -9,11 +9,11 @@ export const CredentialsSchema = z.object({
   username: z
     .string()
     .min(3, 'Username must be at least 3 characters or more')
-    .max(255, 'Username must be 255 characters or less'),
+    .max(30, 'Username must be 30 characters or less'),
   password: z
     .string()
-    .min(6, 'Password minimum should be 6 character')
-    .max(32, 'Password maximum should be 32 character'),
+    .min(8, 'Password minimum should be 8 character')
+    .max(64, 'Password maximum should be 64 character'),
 });
 
 export const AccountSchema = z.object({
