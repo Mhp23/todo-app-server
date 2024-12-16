@@ -2,6 +2,8 @@
 
 The **Go Game Todo Server** is a backend application designed for managing the core logic and API services for a to-do app. Despite the name, it is not a game server but a robust backend for organizing tasks and to-do lists. It is built with modern TypeScript tooling and libraries, offering scalability, security, and performance.
 
+### [Go Game Client (React Native)](https://github.com/Mhp23/go-game-client/)
+
 ## Features
 
 - **Authentication**: Secure user authentication using JSON Web Tokens (JWT) and bcrypt for password hashing.
@@ -65,7 +67,7 @@ The **Go Game Todo Server** is a backend application designed for managing the c
    pnpm install
    ```
 
-   Alternatively, for **npm** or **yarn**:
+   Alternatively, for **npm** or **yarn** (If you're using a different package manager, you should change the Husky pre-commit commands based on that):
 
    ```bash
    npm install
@@ -87,7 +89,7 @@ The **Go Game Todo Server** is a backend application designed for managing the c
    CORS_ORIGIN="http://localhost:*"
 
    # Rate Limiting
-   SENSITIVE_RATE_LIMIT_WINDOW_MS="10"
+   SENSITIVE_RATE_LIMIT_WINDOW_MS="25"
    COMMON_RATE_LIMIT_WINDOW_MS="1000"
    COMMON_RATE_LIMIT_MAX_REQUESTS="100"
 

@@ -2,8 +2,13 @@
   "name": "go-game-server",
   "version": "1.0.0",
   "description": "The Go Game Backend",
-  "author": "Hossein Pousti",
+  "repository": "https://github.com/Mhp23/go-game-server",
+  "author": "mhp23 <hpousty@gmail.com> (https://github.com/Mhp23)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mhp23/go-game-server/issues"
+  },
+  "homepage": "https://github.com/Mhp23/go-game-server#readme",
   "main": "index.ts",
   "private": true,
   "scripts": {
