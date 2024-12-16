@@ -77,7 +77,7 @@ The **Go Game Todo Server** is a backend application designed for managing the c
 
 3. Set up environment variables:
 
-   Create a `.env` file in the root of the project and configure it like the following template:
+   Create a `.env` file in the root of the project and configure it like the following template (Don't forgot to use the right port instead of `*` for CORS):
 
    ```env
    # Environment Configuration
