@@ -22,7 +22,7 @@ export const authenticateMiddleware = (
   }
   const payload = verifyToken<SigningContentType>(accessToken, 'access');
 
-  if (!payload?.id) {
+  if (!payload?._id) {
     const response = ResponseService.failure(
       'Invalid or expired access token.',
       StatusCodes.UNAUTHORIZED,
