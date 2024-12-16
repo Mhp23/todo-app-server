@@ -13,7 +13,7 @@ todoRegistry.register('Todo', TodoSchema);
 
 // Get All Todos
 todoRegistry.registerPath({
-  method: 'post',
+  method: 'get',
   path: `${BASE_PATH}/get-all`,
   tags: ['Todo'],
   responses: createApiResponse([
@@ -72,6 +72,12 @@ todoRegistry.registerPath({
   method: 'delete',
   path: `${BASE_PATH}/delete`,
   tags: ['Todo'],
+  request: createApiRequest({
+    schema: TodoSchema.pick({
+      _id: true,
+      accountId: true,
+    }),
+  }),
   responses: createApiResponse([
     {
       status: StatusCodes.OK,

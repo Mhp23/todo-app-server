@@ -37,4 +37,15 @@ todoRouter.put(
   todoController.update,
 );
 
-todoRouter.delete('/delete', todoController.delete);
+todoRouter.delete(
+  '/delete',
+  validateRequest(
+    generateBodySchema(
+      TodoSchema.pick({
+        _id: true,
+        accountId: true,
+      }),
+    ),
+  ),
+  todoController.delete,
+);
