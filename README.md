@@ -1,8 +1,8 @@
-# Go Game Todo Server
+# Todo App Server
 
-The **Go Game Todo Server** is a backend application designed for managing the core logic and API services for a to-do app. Despite the name, it is not a game server but a robust backend for organizing tasks and to-do lists. It is built with modern TypeScript tooling and libraries, offering scalability, security, and performance.
+It is a backend application designed for managing the core logic and API services for a todo app. It is a robust backend for organizing tasks and todo lists. It is built with modern TypeScript tooling and libraries, offering scalability, security, and performance.
 
-### [Go Game Client (React Native)](https://github.com/Mhp23/go-game-client/)
+### [Todo App Client (React Native)](https://github.com/Mhp23/todo-app-client/)
 
 ## Features
 
@@ -55,8 +55,8 @@ The **Go Game Todo Server** is a backend application designed for managing the c
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/mhp23/go-game-server.git
-   cd go-game-server
+   git clone https://github.com/mhp23/todo-app-server.git
+   cd todo-app-server
    ```
 
 2. Install dependencies:
@@ -94,7 +94,7 @@ The **Go Game Todo Server** is a backend application designed for managing the c
    COMMON_RATE_LIMIT_MAX_REQUESTS="100"
 
    # Databases
-   MONGO_CONNECTION_URI="mongodb://localhost:27017/Go_Game_DB"
+   MONGO_CONNECTION_URI="mongodb://localhost:27017/Todo_App_DB"
 
    # Password
    SALT_ROUNDS=10

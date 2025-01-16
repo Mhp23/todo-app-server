@@ -16,7 +16,7 @@ export const env = cleanEnv(process.env, {
   COMMON_RATE_LIMIT_WINDOW_MS: num({devDefault: testOnly(1000)}),
   //Database
   MONGO_CONNECTION_URI: str({
-    devDefault: testOnly('mongodb://localhost:27017/Go_Game_DB'),
+    devDefault: testOnly('mongodb://localhost:27017/Todo_App_DB'),
   }),
   //Password Hash
   SALT_ROUNDS: num({devDefault: 10}),
